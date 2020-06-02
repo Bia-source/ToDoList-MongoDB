@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
+import Tarefas from './Tarefas';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Lista de Tarefas</h1>
-      </header>
-      
-    </div>
+    <>
+    
+      <Tarefas/>
+    </>
   );
 }
 
