@@ -13,7 +13,7 @@ module.exports = {
     },
 
     async buscarPorNome(req,res){
-       const tarefa = await Tarefas.find(req.params);
+       const tarefa = await Tarefas.find(req.query);
        return res.json(tarefa);
     },
 
