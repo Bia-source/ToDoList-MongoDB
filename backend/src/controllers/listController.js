@@ -1,34 +1,34 @@
 const mongoose = require('mongoose');
-const Tarefas = mongoose.model('Tarefa');
+const Questions = mongoose.model('Pergunta');
 
 module.exports = {
-    async buscarTodos(req,res){
-       const tarefa = await Tarefas.find();
-       return res.json(tarefa);
+    async getAll(req,res){
+       const questions = await Questions.find();
+       return res.json(questions);
     },
 
-    async buscarPorId(req,res){
-       const tarefa = await Tarefas.findById(req.params.id);
-       return res.json(tarefa);
+    async getFindById(req,res){
+       const question = await Questions.findById(req.params.id);
+       return res.json(question);
     },
 
-    async buscarPorNome(req,res){
-       const tarefa = await Tarefas.find(req.query);
-       return res.json(tarefa);
+    async getFindByName(req,res){
+       const question = await Questions.find(req.query);
+       return res.json(question);
     },
 
-    async criarTarefa(req,res){
-       const tarefa = await Tarefas.create(req.body);
-       return res.json(tarefa);
+    async createQuestion(req,res){
+       const question = await Questions.create(req.body);
+       return res.json(question);
     },
 
-    async editarTarefa(req,res){
-        const tarefa = await Tarefas.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true});
-        return res.json(tarefa);
+    async updateQuestion(req,res){
+        const question = await Questions.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true});
+        return res.json(question);
     },
-    async deletarTarefa(req,res){
-        const tarefa = await Tarefas.findOneAndDelete({_id: req.params.id});
-        return res.json(tarefa);
+    async deleteQuestion(req,res){
+        const question = await Questions.findOneAndDelete({_id: req.params.id});
+        return res.json(question);
     }
 }
 

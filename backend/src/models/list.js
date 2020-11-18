@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const TarefaSchema = new mongoose.Schema({
-    tarefa:{
+const PerguntaSchema = new mongoose.Schema({
+    pergunta:{
        type: String,
        required: true
     }
 });
 
-mongoose.model('Tarefa', TarefaSchema);
+mongoose.model('Pergunta', PerguntaSchema);
